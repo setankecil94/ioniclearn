@@ -4,7 +4,18 @@
   	<h1 class="title">Dashboard</h1>
   	<button class="button icon ion-navicon"></button>
   </div>
-  <div class="list" >
+  <div class="list">
+  </div>
+   <div class="list">
+  </div>
+  <div class="slidebox" ng-controller="SlidesCtrl as slidesCtrl" class="has-header" scrollbar-y="false" scrollbar-x="false" scroll="false" padding="true">
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" show-pager="true" auto-play="true">
+      <ion-slide ng-repeat="slide in slidesCtrl.slides | orderBy:'title'">
+        <img ng-src="{{slide.thumb}}" class="slideImagePortrait">
+      </ion-slide>
+    </ion-slide-box>
+  </div>
+  <div class="list">
   </div>
   <div class="row">
   <div class="col col-50">
